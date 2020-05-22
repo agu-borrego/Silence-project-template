@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS Documents;
+DROP TABLE IF EXISTS Users;
+
+CREATE TABLE Users (
+    userId INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(256) NOT NULL,
+    password VARCHAR(256) NOT NULL
+);
+
+CREATE TABLE Documents (
+    documentId INT PRIMARY KEY AUTO_INCREMENT,
+    userId INT NOT NULL,
+    body TEXT NOT NULL,
+    FOREIGN KEY (userId) REFERENCES Users (userId)
+);
