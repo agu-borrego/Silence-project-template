@@ -5,9 +5,9 @@ API_PREFIX = "/api"
 DB_CONN = {
     "host": "localhost",
     "port": 3306,
-    "username": "prueba_silence",
-    "password": "prueba",
-    "database": "pruebas",
+    "username": "silence",
+    "password": "123456",
+    "database": "app",
 }
 
 SQL_SCRIPTS = [
