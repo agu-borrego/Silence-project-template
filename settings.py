@@ -1,6 +1,10 @@
 LOG_LEVEL = "PRUEBA"
+DEBUG_ENABLED = True
 HTTP_PORT = 9999
 API_PREFIX = "/api"
+
+RUN_API = True
+RUN_WEB = True
 
 DB_CONN = {
     "host": "localhost",
