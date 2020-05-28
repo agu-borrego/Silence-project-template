@@ -25,11 +25,11 @@ def get_by_id():
     route="/employees",
     method="POST",
     sql="INSERT INTO Employees \
-         (departmentId, bossId, firstName, lastName, salary, contractStart, contractEnd, fee) \
+         (email, password, departmentId, bossId, firstName, lastName, salary) \
          VALUES \
-         ($departmentId, $bossId, $firstName, $lastName, $salary, $contractStart, $contractEnd, $fee)"
+         ($email, $password, $departmentId, $bossId, $firstName, $lastName, $salary)"
 )
-def add(departmentId, bossId, firstName, lastName, salary, contractStart, contractEnd, fee):
+def add(email, password, departmentId, bossId, firstName, lastName, salary):
     if not firstName or not lastName:
         raise HTTPError(400, "The first and last name are required.")
 
@@ -38,12 +38,12 @@ def add(departmentId, bossId, firstName, lastName, salary, contractStart, contra
 @endpoint(
     route="/employees/$employeeId",
     method="PUT",
-    sql="UPDATE Employees SET departmentId = $departmentId, bossId = $bossId, \
-         firstName = $firstName, lastName = $lastName, salary = $salary, \
-         contractStart = $contractStart, contractEnd = $contractEnd, fee = $fee \
+    sql="UPDATE Employees SET email = $email, password = $password, \
+         departmentId = $departmentId, bossId = $bossId, firstName = $firstName, \
+         lastName = $lastName, salary = $salary \
          WHERE employeeId = $employeeId"
 )
-def update(departmentId, bossId, firstName, lastName, salary, contractStart, contractEnd, fee):
+def update(email, password, departmentId, bossId, firstName, lastName, salary):
     pass
 
 ###############################################################################

@@ -23,7 +23,8 @@ def get_by_id():
 @endpoint(
     route="/departments",
     method="POST",
-    sql="INSERT INTO Departments (name, city) VALUES ($name, $city)"
+    sql="INSERT INTO Departments (name, city) VALUES ($name, $city)",
+    auth_required=True,
 )
 def add(name, city):
     pass
@@ -33,7 +34,8 @@ def add(name, city):
 @endpoint(
     route="/departments/$departmentId",
     method="PUT",
-    sql="UPDATE Departments SET name = $name, city = $city WHERE departmentId = $departmentId"
+    sql="UPDATE Departments SET name = $name, city = $city WHERE departmentId = $departmentId",
+    auth_required=True,
 )
 def update(name, city):
     pass
@@ -43,7 +45,8 @@ def update(name, city):
 @endpoint(
     route="/departments/$departmentId",
     method="DELETE",
-    sql="DELETE FROM Departments WHERE departmentId = $departmentId"
+    sql="DELETE FROM Departments WHERE departmentId = $departmentId",
+    auth_required=True,
 )
 def delete():
     pass

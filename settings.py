@@ -14,6 +14,12 @@ DB_CONN = {
     "database": "app",
 }
 
+USER_AUTH_DATA = {
+    "table": "Employees",
+    "identifier": "email",
+    "password": "password",
+}
+
 SQL_SCRIPTS = [
     "create_tables.sql",
     "populate_database.sql"

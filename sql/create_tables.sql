@@ -10,16 +10,14 @@ CREATE TABLE Departments (
 
 CREATE TABLE Employees (
   employeeId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(256) UNIQUE NOT NULL,
+  password VARCHAR(512) NOT NULL,
   departmentId INT DEFAULT NULL,
   bossId INT DEFAULT NULL,
   firstName VARCHAR(256) NOT NULL,
   lastName VARCHAR(256) NOT NULL,
   salary DOUBLE DEFAULT 2000,
-  contractStart DATE DEFAULT NULL,
-  contractEnd DATE DEFAULT NULL,
-  fee DOUBLE DEFAULT NULL,
   FOREIGN KEY (departmentId) REFERENCES Departments (departmentId) ON DELETE SET NULL,
   FOREIGN KEY (bossId) REFERENCES Employees (employeeId),
-  CONSTRAINT validFee CHECK (fee >= 0 and fee <= 1),
-  CONSTRAINT validContractDates CHECK (contractStart < contractEnd)
+  CONSTRAINT validSalary CHECK (salary > 0)
 );
