@@ -9,9 +9,9 @@ DEBUG_ENABLED = False
 DB_CONN = {
     "host": "127.0.0.1",
     "port": 3306,
-    "username": "silence",
-    "password": "123456",
-    "database": "app",
+    "username": "root",#silence
+    "password": "",#123456
+    "database": "example_project",
 }
 
 # The sequence of SQL scripts located in the sql/ folder that must
@@ -25,7 +25,7 @@ SQL_SCRIPTS = [
 HTTP_PORT = 8080
 
 # The URL prefix for all API endpoints
-API_PREFIX = "/api"
+API_PREFIX = "/api/v1"
 
 # Table and fields that are used for both login and register
 USER_AUTH_DATA = {
